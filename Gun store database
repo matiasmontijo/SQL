@@ -1,0 +1,29 @@
+--Create a store database
+
+
+CREATE TABLE guns (id INTEGER PRIMARY KEY, make TEXT, model TEXT, price INTEGER, caliber TEXT); 
+
+INSERT INTO guns VALUES (1, "Springfield", "XD", 450, "9mm");
+INSERT INTO guns VALUES (2, "Glock", "19", 539, "9mm"); 
+INSERT INTO guns VALUES (3, "Smith-Wesson", "M&P9", 419, "9mm");
+INSERT INTO guns VALUES (4, "Glock", "17", 599, "9mm");
+INSERT INTO guns VALUES (5, "Kel-Tec", "Sub-2000", 499, "9mm");
+INSERT INTO guns VALUES (6, "Smith-Wesson", "MP15 Sport", 519, ".22LR");
+INSERT INTO guns VALUES(7, "Glock", "26", 599, "9mm");
+INSERT INTO guns VALUES(8, "Sig Sauer", "SP2022", 619, "9mm");
+INSERT INTO guns VALUES(9, "Springfield", "Saint Victor", 1099, "5.56");
+INSERT INTO guns VALUES(10, "H&K", "USC Carbine", 1699, "45ACP");
+INSERT INTO guns VALUES(11, "Daniel Defense", "M4A1", 2039, "5.56");
+INSERT INTO guns VALUES(12, "POF USA", "Revolution Piston", 2679, ".308 Win");
+INSERT INTO guns VALUES(13, "REMINGTON", "870", 439, "12ga");
+INSERT INTO guns VALUES(14, "Benelli", "Super Nova", 549, "12ga");
+INSERT INTO guns VALUES(15, "Mossberg", "590", 499, "12ga");
+
+--display the database ordered by price.
+SELECT * FROM guns ORDER BY price; 
+
+--display cost of every gun
+SELECT SUM(price) FROM guns;
+
+--display the avg price for a gun
+SELECT AVG(price) FROM guns; 
