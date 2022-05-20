@@ -1,0 +1,75 @@
+CREATE TABLE top_actors
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+        firstName TEXT,
+        lastName TEXT,
+        movies INTEGER,
+        rating INTEGER);
+        
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Tom", "Hanks", 99, 100); 
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Tom", "Cruise", 80, 100); 
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Will", "Smith", 75, 100);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Salma", "Hayek", 35, 85);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Natalie", "Portman", 55, 100);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Denzel", "Washington", 98, 100);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Kate", "Winslet", 48, 100);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Julianne", "Moore", 50, 80);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Jayden", "Smith", 15, 20);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("John", "Wayne", 100, 75);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Angelina", "Jolie", 62, 100);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Jackie", "Chan", 75, 71);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Dwayne", "Johnson", 75, 70);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Mark", "Wahlberg", 48, 65);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Joe", "Pesci", 68, 90);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Queen", "Latifah", 30, 58);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Chris", "Hemsworth", 42, 88);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Ben", "Affleck", 63, 84);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Matt", "Damon", 55, 79);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Robin", "Williams", 99, 100);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("George", "Burns", 75, 48);
+INSERT INTO top_actors(firstname, lastName, movies, rating)
+VALUES("Alan", "Alda", 26, 52);
+
+SELECT * 
+FROM top_actors
+WHERE movies > 50 AND rating > 80; 
+
+SELECT 
+    firstname
+    ,lastName
+FROM top_actors
+WHERE movies < 80 AND rating < 80
+ORDER BY lastName; 
+
+SELECT COUNT(*), firstName,
+    CASE 
+    WHEN rating > 85 THEN "A+ Actor"
+    ELSE "Average Actor"
+    END as "actor_rating"
+FROM top_actors
+ORDER BY firstName;
+
+SELECT *
+FROM top_actors
+WHERE rating >= (.50 * 100)
+ORDER BY rating DESC; 
